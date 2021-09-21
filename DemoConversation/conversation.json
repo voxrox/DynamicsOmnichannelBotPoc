@@ -1,0 +1,34 @@
+{
+  "Conversation": {
+    "WelcomeMessage": "Hi. I am Virtual Agent. How can I help you today? I can assist you better if you type a short sentence like Purpose of the Bot,article on Surface Laptop",
+    "ConversationDictionary": {
+      "Hi": "Hello,How can I help you today?",
+      "Hello": "Hello,How can I help you today?",
+      "Purpose of the Bot": "Omnichannel for Customer Service also provides a modern, customizable, high-productivity app that allows agents to engage with customers across different channels. The application offers contextual customer identification, real-time notification, integrated communication, and agent productivity tools like KB integration, search, and case creation to ensure agents are effective",
+      "Purpose of Bot": "Omnichannel for Customer Service also provides a modern, customizable, high-productivity app that allows agents to engage with customers across different channels. The application offers contextual customer identification, real-time notification, integrated communication, and agent productivity tools like KB integration, search, and case creation to ensure agents are effective",
+      "Hi, how can I schedule my restarts upon upgrades?": "Sure, Is this related to your Surface Go or Laptop?",
+      "article on Surface Laptop": "Sure! I found this article:(Adaptive Card: 'article.json')",
+      "article on Surface Go": "Sure! I found this article:(Adaptive Card: 'article.json')",
+      "article.json": "Did this help?",
+      "Yes, that worked! Awesome thank you so much": "I am glad, is there anything else I can help you with?",
+      //"Can you please schedule an appointment at the nearest center?": "Your nearest location.(Adaptive Card: 'store.json')",
+      //"store.json": "Please choose below available time for your appointment(Suggested Action: '10am/1pm/3pm')",
+      //"10am": "Your appointment is confirmed for 10am. Is there anything else I can help with?",
+      //"1pm": "Your appointment is confirmed for 1pm. Is there anything else I can help with?",
+      //"3pm": "Your appointment is confirmed for 3pm. Is there anything else I can help with?",
+      //"Echo": "Echo"
+    },
+    "EscalationDictionary": {
+      "I have a billing question": {
+        "EscalationMessage": "Transferring  to an agent, who can help you with this. Please remain online…",
+        "IssueSummary": "Issue Summary: billing question",
+        "BotHandoffContext": "Specialist request"
+      },
+      "Talk to agent": {
+        "EscalationMessage": "Transferring  to an agent, who can help you with this. Please remain online…",
+        "IssueSummary": "Customer wants to talk to a human agent",
+        "BotHandoffContext": "Specialist request"
+      }
+    }
+  }
+}
