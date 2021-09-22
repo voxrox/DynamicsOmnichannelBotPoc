@@ -53,5 +53,5 @@ jobs:
       with:
         app-name: 'liveagentchatbotpoc'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_14a72739cbab4d8189d4bcb9d213f52f }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_babc0764befd418bb20ad881524e7c99 }}
         package: .
