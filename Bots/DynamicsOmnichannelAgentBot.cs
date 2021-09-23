@@ -46,7 +46,7 @@ namespace DynamicsOmnichannelBotPoc.Bots
                     Dictionary<string, string> endConversationContext = new Dictionary<string, string>();
                     if (conversation.EscalationDictionary.ContainsKey(turnContext.Activity.Text)) { endConversationContext = conversation.EscalationDictionary[turnContext.Activity.Text]; }
 
-                    await turnContext.SendActivityAsync("Transferring  to an agent, who can help you with this. Please remain online…");
+                    await turnContext.SendActivityAsync("TransferringÂ  to an agent, who can help you with this. Please remain onlineâ€¦");
 
                     Dictionary<string, object> handOffContext = new Dictionary<string, object>()
                     {
@@ -60,7 +60,7 @@ namespace DynamicsOmnichannelBotPoc.Bots
                         Context = handOffContext
                     }); // Transcript is persisted by Omnichannel
 
-                    await turnContext.SendActivityAsync(handoffevent);
+                   // await turnContext.SendActivityAsync(handoffevent);
                 }
                 else if (turnContext.Activity.Text.ToLower().Contains("end"))
                 {
