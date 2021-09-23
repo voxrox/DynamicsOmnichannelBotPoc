@@ -13,7 +13,7 @@ namespace DynamicsOmnichannelBotPoc
 {
     public class AdapterWithErrorHandler : BotFrameworkHttpAdapter
     {
-        public AdapterWithErrorHandler(IConfiguration configuration, ILogger<BotFrameworkHttpAdapter> logger DynamicsOmnichannelMiddleware dynamicsOmnichannelMiddleware)
+        public AdapterWithErrorHandler(IConfiguration configuration, ILogger<BotFrameworkHttpAdapter> logger, DynamicsOmnichannelMiddleware dynamicsOmnichannelMiddleware)
             : base(configuration, logger)
             
         {
