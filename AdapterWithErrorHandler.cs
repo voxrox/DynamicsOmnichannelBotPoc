@@ -7,14 +7,19 @@ using Microsoft.Bot.Builder.Integration.AspNet.Core;
 using Microsoft.Bot.Builder.TraceExtensions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using DynamicsOmnichannelBotPoc.Middleware;
 
 namespace DynamicsOmnichannelBotPoc
 {
     public class AdapterWithErrorHandler : BotFrameworkHttpAdapter
     {
-        public AdapterWithErrorHandler(IConfiguration configuration, ILogger<BotFrameworkHttpAdapter> logger)
+        public AdapterWithErrorHandler(IConfiguration configuration, ILogger<BotFrameworkHttpAdapter> logger DynamicsOmnichannelMiddleware dynamicsOmnichannelMiddleware)
             : base(configuration, logger)
+            
         {
+             // Add dynamics omnichannel middelware to the pipeline
+            Use(dynamicsOmnichannelMiddleware);
+            
             OnTurnError = async (turnContext, exception) =>
             {
                 // Log any leaked exception from the application.
