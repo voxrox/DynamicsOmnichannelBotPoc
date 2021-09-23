@@ -60,7 +60,7 @@ namespace DynamicsOmnichannelBotPoc.Bots
                         Context = handOffContext
                     }); // Transcript is persisted by Omnichannel
 
-                   // await turnContext.SendActivityAsync(handoffevent);
+                   await turnContext.SendActivityAsync(handoffevent);
                 }
                 else if (turnContext.Activity.Text.ToLower().Contains("end"))
                 {
