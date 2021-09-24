@@ -2,7 +2,6 @@
   "Conversation": {
     "WelcomeMessage": "Hi. I am Virtual Agent. How can I help you today? I can assist you better if you type a short sentence like Purpose of the Bot,article on Surface Laptop",
     "ConversationDictionary": {
-      "hi": "Hello,How can I help you today?",
       "Hi": "Hello,How can I help you today?",
       "Hello": "Hello,How can I help you today?",
       "Purpose of the Bot": "Omnichannel for Customer Service also provides a modern, customizable, high-productivity app that allows agents to engage with customers across different channels. The application offers contextual customer identification, real-time notification, integrated communication, and agent productivity tools like KB integration, search, and case creation to ensure agents are effective",
