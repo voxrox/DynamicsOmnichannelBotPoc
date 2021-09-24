@@ -28,7 +28,7 @@ namespace DynamicsOmnichannelBotPoc
                 // Send a message to the user
                 await turnContext.SendActivityAsync("The bot encountered an error or bug.");
                 await turnContext.SendActivityAsync("To continue to run this bot, please fix the bot source code.");
-                await turnContext.SendActivityAsync(exception.Message);
+                
                 
                 
 
