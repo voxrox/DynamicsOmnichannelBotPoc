@@ -31,8 +31,6 @@ namespace DynamicsOmnichannelBotPoc
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers().AddNewtonsoftJson();
-            
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
             
             // Create the Bot Framework Adapter with error handling enabled.
@@ -48,43 +46,43 @@ namespace DynamicsOmnichannelBotPoc
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-           // if (env.IsDevelopment())
-           // {
-          //      app.UseDeveloperExceptionPage();
-            //}
-
-           // app.UseDefaultFiles()
-             //   .UseStaticFiles()
-               // .UseWebSockets()
-               // .UseRouting()
-               // .UseAuthorization()
-               // .UseEndpoints(endpoints =>
-                //{
-                  //  endpoints.MapControllers();
-               // });
-
-            //app.UseHttpsRedirection();
-            
-          if (env.IsDevelopment())
-          {
-                    app.UseDeveloperExceptionPage();
-           }
-                else
+           if (env.IsDevelopment())
             {
-                  app.UseHsts();
+                app.UseDeveloperExceptionPage();
             }
 
-               app.UseDefaultFiles()
+            app.UseDefaultFiles()
                 .UseStaticFiles()
                 .UseWebSockets()
-                 .UseMvc()
-                 .UseAuthorization()
-                 .UseEndpoints(endpoints =>
-                   {
-                        endpoints.MapControllers();
-                   });
+                .UseRouting()
+                .UseAuthorization()
+                .UseEndpoints(endpoints =>
+                {
+                   endpoints.MapControllers();
+               });
 
-                app.UseHttpsRedirection();
+            app.UseHttpsRedirection();
+            
+      //    if (env.IsDevelopment())
+        //  {
+          //          app.UseDeveloperExceptionPage();
+    //       }
+      //          else
+        //    {
+          //        app.UseHsts();
+           // }
+
+             //  app.UseDefaultFiles()
+               // .UseStaticFiles()
+ //               .UseWebSockets()
+   //              .UseMvc()
+     //            .UseAuthorization()
+       //          .UseEndpoints(endpoints =>
+         //          {
+           //             endpoints.MapControllers();
+             //      });
+//
+  //              app.UseHttpsRedirection();
 
            
             
