@@ -74,9 +74,10 @@ namespace DynamicsOmnichannelBotPoc
                 app.UseHsts();
             }
 
-            app.UseDefaultFiles();
-            app.UseStaticFiles();
-            app.UseWebSockets();
+            app.UseDefaultFiles()
+            app.UseStaticFiles()
+            app.UseWebSockets()
+             app.UseMvc()
               .UseAuthorization()
                .UseEndpoints(endpoints =>
                 {
@@ -85,9 +86,9 @@ namespace DynamicsOmnichannelBotPoc
 
             app.UseHttpsRedirection();
 
-            app.UseMvc();
+           
             
-            
+           
         }
     }
 }
