@@ -28,7 +28,7 @@ namespace DynamicsOmnichannelBotPoc.Middleware
                 {
                     Dictionary<string, object> channelData = messageActivity.ChannelData as Dictionary<string, object> ?? new Dictionary<string, object>();
                     channelData[DeliveryMode] = "bridged";
-                   // messageActivity.ChannelData = channelData;
+                   messageActivity.ChannelData = channelData;
                 }
                 #endregion
 
@@ -44,7 +44,7 @@ namespace DynamicsOmnichannelBotPoc.Middleware
                     Command escalationCommand = new Command
                     {
                         Type = CommandType.Escalate,
-                        Context = handOffContext.Context.ToObject<Dictionary<string, object>>()
+                       // Context = handOffContext.Context.ToObject<Dictionary<string, object>>()
                     };
 
                     handOffEventActivity.Type = ActivityTypes.Message;
