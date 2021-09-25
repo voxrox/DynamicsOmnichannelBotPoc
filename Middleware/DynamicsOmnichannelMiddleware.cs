@@ -44,7 +44,7 @@ namespace DynamicsOmnichannelBotPoc.Middleware
                     Command escalationCommand = new Command
                     {
                         Type = CommandType.Escalate,
-                       // Context = handOffContext.Context.ToObject<Dictionary<string, object>>()
+                        Context = handOffContext.Context.ToObject<Dictionary<string, object>>()
                     };
 
                     handOffEventActivity.Type = ActivityTypes.Message;
