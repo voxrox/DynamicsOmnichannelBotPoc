@@ -30,6 +30,8 @@ namespace DynamicsOmnichannelBotPoc
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers().AddNewtonsoftJson();
+            
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             // Create the Bot Framework Adapter with error handling enabled.
             services.AddSingleton<IBotFrameworkHttpAdapter, AdapterWithErrorHandler>();
@@ -52,6 +54,7 @@ namespace DynamicsOmnichannelBotPoc
             app.UseDefaultFiles()
                 .UseStaticFiles()
                 .UseWebSockets()
+                .UseMvc();
                 .UseRouting()
                 .UseAuthorization()
                 .UseEndpoints(endpoints =>
