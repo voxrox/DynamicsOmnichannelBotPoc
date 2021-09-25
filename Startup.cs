@@ -77,7 +77,7 @@ namespace DynamicsOmnichannelBotPoc
                app.UseDefaultFiles()
                 .UseStaticFiles()
                 .UseWebSockets()
-                 .UseMvc();
+                 .UseMvc()
                  .UseAuthorization()
                  .UseEndpoints(endpoints =>
                    {
