@@ -14,8 +14,8 @@ namespace DynamicsOmnichannelBotPoc
 {
     public class AdapterWithErrorHandler : BotFrameworkHttpAdapter
     {
-        public AdapterWithErrorHandler(IConfiguration configuration, ILogger<BotFrameworkHttpAdapter> logger, DynamicsOmnichannelMiddleware dynamicsOmnichannelMiddleware, Microsoft.Bot.Builder.ConversationState conversationState = null)
-            : base(configuration, logger, conversationState)
+        public AdapterWithErrorHandler(IConfiguration configuration, ILogger<BotFrameworkHttpAdapter> logger, DynamicsOmnichannelMiddleware dynamicsOmnichannelMiddleware)
+            : base(configuration, logger)
             
         {
              // Add dynamics omnichannel middelware to the pipeline
@@ -25,20 +25,7 @@ namespace DynamicsOmnichannelBotPoc
             {
                 // Log any leaked exception from the application.
                 logger.LogError(exception, $"[OnTurnError] unhandled error : {exception.Message}");
-                 if (conversationState != null)
-                {
-                    try
-                    {
-                        // Delete the conversationState for the current conversation to prevent the
-                        // bot from getting stuck in a error-loop caused by being in a bad state.
-                        // ConversationState should be thought of as similar to "cookie-state" in a Web pages.
-                        await conversationState.DeleteAsync(turnContext);
-                    }
-                    catch (Exception e)
-                    {
-                        logger.LogError($"Exception caught on attempting to Delete ConversationState : {e.Message}");
-                    }
-                }
+                
 
                 // Send a message to the user
                 await turnContext.SendActivityAsync("The bot encountered an error or bug.");
