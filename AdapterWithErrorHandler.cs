@@ -9,11 +9,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using DynamicsOmnichannelBotPoc.Middleware;
 
+
 namespace DynamicsOmnichannelBotPoc
 {
     public class AdapterWithErrorHandler : BotFrameworkHttpAdapter
     {
-        public AdapterWithErrorHandler(IConfiguration configuration, ILogger<BotFrameworkHttpAdapter> logger, DynamicsOmnichannelMiddleware dynamicsOmnichannelMiddleware, ConversationState conversationState = null)
+        public AdapterWithErrorHandler(IConfiguration configuration, ILogger<BotFrameworkHttpAdapter> logger, DynamicsOmnichannelMiddleware dynamicsOmnichannelMiddleware, Microsoft.Bot.Builder.ConversationState conversationState = null)
             : base(configuration, logger, conversationState)
             
         {
