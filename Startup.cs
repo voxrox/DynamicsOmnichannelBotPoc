@@ -74,11 +74,11 @@ namespace DynamicsOmnichannelBotPoc
                 app.UseHsts();
             }
 
-            app.UseDefaultFiles()
-            app.UseStaticFiles()
-            app.UseWebSockets()
-             app.UseMvc()
-              .UseAuthorization()
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
+            app.UseWebSockets();
+             app.UseMvc();
+              .UseAuthorization();
                .UseEndpoints(endpoints =>
                 {
                     endpoints.MapControllers();
