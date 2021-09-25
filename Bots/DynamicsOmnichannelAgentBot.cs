@@ -123,7 +123,7 @@ namespace DynamicsOmnichannelBotPoc.Bots
                       //  break;
                       
                       case "FPB Event":
-                      reply.Text = $"";
+                      reply.Text =" ";
                       break;
                     default:
                         reply.Text = $"I am sorry, I cannot help you with\n'{text}'\n\n If you would like me to transfer you to a customer service agent please type 'Talk to agent'";
