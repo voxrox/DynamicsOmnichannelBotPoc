@@ -107,9 +107,9 @@ namespace DynamicsOmnichannelBotPoc.Bots
                         // Display an Adaptive Card for support article
                         reply.Attachments.Add(DynamicsOmnichannelBotPoc.AdaptiveCards.AdaptiveCards.CreateAdaptiveCardAttachment("article.json"));
                         break;
-                    case "suggested action":
-                        reply.SuggestedActions = DynamicsOmnichannelBotPoc.AdaptiveCards.AdaptiveCards.CreateSuggestedAction(new string[] { "10am", "1pm", "3pm" });
-                        break;
+                  //  case "suggested action":
+                    //    reply.SuggestedActions = DynamicsOmnichannelBotPoc.AdaptiveCards.AdaptiveCards.CreateSuggestedAction(new string[] { "10am", "1pm", "3pm" });
+                      //  break;
                     default:
                         reply.Text = $"I am sorry, I cannot help you with\n'{text}'\n\n If you would like me to transfer you to a customer service agent please type 'Talk to agent'";
                         break;
