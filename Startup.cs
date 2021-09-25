@@ -12,6 +12,7 @@ using Microsoft.Bot.Builder.Integration.AspNet.Core;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Mvc;
 
 namespace DynamicsOmnichannelBotPoc
 {
@@ -31,6 +32,8 @@ namespace DynamicsOmnichannelBotPoc
         {
             services.AddControllers().AddNewtonsoftJson();
             
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
             
             // Create the Bot Framework Adapter with error handling enabled.
             services.AddSingleton<IBotFrameworkHttpAdapter, AdapterWithErrorHandler>();
@@ -45,22 +48,39 @@ namespace DynamicsOmnichannelBotPoc
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
+            //if (env.IsDevelopment())
+            //{
+              //  app.UseDeveloperExceptionPage();
+           // }
+
+           // app.UseDefaultFiles()
+             //   .UseStaticFiles()
+               // .UseWebSockets()
+               // .UseRouting()
+               // .UseAuthorization()
+               // .UseEndpoints(endpoints =>
+                //{
+                  //  endpoints.MapControllers();
+               // });
+
+            //app.UseHttpsRedirection();
+            
+             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseHsts();
+            }
 
-            app.UseDefaultFiles()
-                .UseStaticFiles()
-                .UseWebSockets()
-                .UseRouting()
-                .UseAuthorization()
-                .UseEndpoints(endpoints =>
-                {
-                    endpoints.MapControllers();
-                });
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
+            app.UseWebSockets();
 
-            app.UseHttpsRedirection();
+            app.UseMvc();
+            
+            
         }
     }
 }
