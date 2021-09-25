@@ -13,8 +13,8 @@ namespace DynamicsOmnichannelBotPoc
 {
     public class AdapterWithErrorHandler : BotFrameworkHttpAdapter
     {
-        public AdapterWithErrorHandler(IConfiguration configuration, ILogger<BotFrameworkHttpAdapter> logger, DynamicsOmnichannelMiddleware dynamicsOmnichannelMiddleware, , ConversationState conversationState = null)
-            : base(configuration, logger)
+        public AdapterWithErrorHandler(IConfiguration configuration, ILogger<BotFrameworkHttpAdapter> logger, DynamicsOmnichannelMiddleware dynamicsOmnichannelMiddleware, ConversationState conversationState = null)
+            : base(configuration, logger, conversationState)
             
         {
              // Add dynamics omnichannel middelware to the pipeline
