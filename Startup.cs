@@ -48,10 +48,10 @@ namespace DynamicsOmnichannelBotPoc
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            //if (env.IsDevelopment())
-            //{
-              //  app.UseDeveloperExceptionPage();
-           // }
+           // if (env.IsDevelopment())
+           // {
+          //      app.UseDeveloperExceptionPage();
+            //}
 
            // app.UseDefaultFiles()
              //   .UseStaticFiles()
@@ -65,26 +65,26 @@ namespace DynamicsOmnichannelBotPoc
 
             //app.UseHttpsRedirection();
             
-             if (env.IsDevelopment())
+          if (env.IsDevelopment())
+          {
+                    app.UseDeveloperExceptionPage();
+           }
+                else
             {
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                app.UseHsts();
+                  app.UseHsts();
             }
 
-            app.UseDefaultFiles();
-            app.UseStaticFiles();
-            app.UseWebSockets();
-             app.UseMvc();
-              .UseAuthorization();
-               .UseEndpoints(endpoints =>
-                {
-                    endpoints.MapControllers();
-                });
+               app.UseDefaultFiles()
+                .UseStaticFiles()
+                .UseWebSockets();
+                 .UseMvc();
+                 .UseAuthorization()
+                 .UseEndpoints(endpoints =>
+                   {
+                        endpoints.MapControllers();
+                   });
 
-            app.UseHttpsRedirection();
+                app.UseHttpsRedirection();
 
            
             
